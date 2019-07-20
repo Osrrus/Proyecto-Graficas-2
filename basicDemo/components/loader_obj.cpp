@@ -364,8 +364,10 @@ Obj *loadObj(const char *path,std::string shaderUsed)
 			fscanf_s(mtl, "%s", &lineActula);
 			// std::cout << "Hola: " << lineActula << std::endl;
 			xx = findModel(lineActula, newObj);
+			
 			newObj->models[xx]->material.rMaterial = 0.5;
 			newObj->models[xx]->material.refra = 1;
+			newObj->models[xx]->material.refractive = 1.0;
 		}
 		else if (strcmp(lineActula, "map_Kd") == 0)
 		{
@@ -441,6 +443,6 @@ Obj *loadObj(const char *path,std::string shaderUsed)
 	fclose(file);
 	fclose(mtl);
 	//unsigned int textureID = loadT(texturePath);
-
+	newObj->shaderName = shaderUsed;
 	return newObj;
 }

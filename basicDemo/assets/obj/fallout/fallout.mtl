@@ -1,7 +1,7 @@
 # Blender MTL File: 'None'
 # Material Count: 2
 
-newmtl 02_-_Default
+newmtl Power_Armor
 Ns 19.607843
 Ka 1.000000 1.000000 1.000000
 Kd 0.470588 0.470588 0.470588
@@ -12,8 +12,9 @@ d 0.000000
 illum 1
 map_Kd helmet.png
 map_d helmet.png
+map_Bump helmet_normal.jpg
 
-newmtl Power_Armor
+newmtl 02_-_Default
 Ns 19.607843
 Ka 1.000000 1.000000 1.000000
 Kd 0.470588 0.470588 0.470588
@@ -24,3 +25,4 @@ d 0.000000
 illum 1
 map_Kd suit.png
 map_d suit.png
+map_Bump suit_normal.jpg

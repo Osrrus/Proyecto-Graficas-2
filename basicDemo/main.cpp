@@ -31,8 +31,9 @@ CubeMap *cubeMap;
 std::vector<Obj*> objects;
 Obj* object;
 DrawParameters drawParameters;
-
-bool pressLeft;
+int mSelect = 0;
+bool pressLeft, objMenuVis = false;
+std::string useShader;
 int pressMenu, menuLigth = 1;
 
 void initGui() {
@@ -45,6 +46,8 @@ void initGui() {
 	interface->dirlSpecular = drawParameters.dirLigth->sColor;
 	interface->dirlPosition = drawParameters.dirLigth->direccion;
 	interface->dirlVis = drawParameters.dirLigth->active;
+
+    interface->addMenu(windowWidth, windowHeight,"Obj");
 }
 
 
@@ -55,6 +58,41 @@ void updateGui(){
 	drawParameters.dirLigth->sColor = interface->dirlSpecular;
 	drawParameters.dirLigth->direccion = interface->dirlPosition;
 	drawParameters.dirLigth->active = interface->dirlVis;
+
+    if (interface->modelCon > objects.size()-1 ) {
+
+		interface->modelCon = objects.size()-1;
+
+	}
+	
+	if (interface->modelCon != mSelect) {
+
+		mSelect = interface->modelCon;
+
+		interface->modelVis = objects[mSelect]->visible;
+
+		interface->setDeployType(objects[mSelect]->shaderName);
+
+		useShader = objects[mSelect]->shaderName;
+
+		interface->refractive = objects[mSelect]->getRefractive();
+		interface->refra = objects[mSelect]->getRefra();
+	}
+	else {
+
+
+		objects[mSelect]->visible = interface->modelVis ;
+		objects[mSelect]->setRefractive(interface->refractive);
+		objects[mSelect]->setRefra(interface->refra);
+
+		if (interface->getDeployType() != useShader) {
+
+			useShader = interface->getDeployType();
+			objects[mSelect]->deleteShaders();
+			objects[mSelect]->loadShader(useShader);
+			objects[mSelect]->shaderName = useShader;
+		}
+	}
 }
 
 std::vector<std::string> initCubeMapFaces(){
@@ -185,6 +223,8 @@ bool init()
 	loadObjects("assets/obj/crate/cubito.obj","reflect");
 	loadObjects("assets/obj/plane/plane.obj", "");
 	loadObjects("assets/obj/plane/plane2.obj", "");
+	//loadObjects("assets/obj/fallout/fallout.obj", "");
+
 
 	glm::mat4 trans = glm::mat4(1.0f);
 	trans = glm::translate(trans, glm::vec3(-3.0f, -1.0f, 0.0f));
@@ -205,6 +245,12 @@ bool init()
 	trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
 	trans = glm::scale(trans, glm::vec3(1.0f));
 	objects[3]->model = trans;
+
+	/*trans = glm::mat4(1.0f);
+	trans = glm::translate(trans, glm::vec3(0.0f,0.0f, -2.5f));
+	trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+	trans = glm::scale(trans, glm::vec3(1.0f));
+	objects[4]->model = trans;*/
 
 	stbi_set_flip_vertically_on_load(false);
     cubeMap = new CubeMap(initCubeMapFaces());
@@ -261,6 +307,7 @@ void processKeyboardInput(GLFWwindow *window)
 		if (menuLigth == 1) {
 
 			TwDefine(" dirL visible=true ");
+			TwDefine(" Obj visible=false ");
 
 			menuLigth=2;
 		}
@@ -269,6 +316,23 @@ void processKeyboardInput(GLFWwindow *window)
 
 			TwDefine(" dirL visible=false ");
 			menuLigth = 1;
+		}
+	}
+	if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS) {
+
+
+		if (!objMenuVis) {
+
+			TwDefine(" Obj visible=true ");
+			TwDefine(" dirL visible=false ");
+
+			objMenuVis = true;
+		}
+		else{
+
+			TwDefine(" Obj visible=false ");
+			objMenuVis = false;
+
 		}
 	}
 }

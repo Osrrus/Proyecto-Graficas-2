@@ -71,17 +71,7 @@ void Model::loadShader(std::string useShader)
 	else if (useShader == "CT")
 	{
 
-		shader = new Shader("assets/shaders/basic.vert", "assets/shaders/CT.frag");
-	}
-	else if (useShader == "CTNT")
-	{
-
-		shader = new Shader("assets/shaders/basic.vert", "assets/shaders/CookTorrenceNT.frag");
-	}
-	else if (useShader == "OrN")
-	{
-
-		shader = new Shader("assets/shaders/basic.vert", "assets/shaders/OrenNayar.frag");
+		shader = new Shader("assets/shaders/basic.vert", "assets/shaders/basic.frag");
 	}
 	else
 	{
@@ -112,7 +102,8 @@ void Model::Draw()
 	shader->setVec3("modelMaterial_s", material.sMaterial);
 	shader->setFloat("modelMaterial_ns", material.nsMaterial);
 	shader->setFloat("modelMaterial_r", material.rMaterial);
-	shader->setFloat("refra", material.refra);
+	shader->setBool("refra", material.refra);
+	shader->setFloat("refractive", material.refractive);
 
 	glActiveTexture(GL_TEXTURE0);
 

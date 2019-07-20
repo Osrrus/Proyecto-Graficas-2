@@ -13,10 +13,19 @@ class Obj
     public:
         glm::mat4 model;
         std::vector<Model*> models;
+        std::string shaderName;
+        bool visible;
         Obj();
         ~Obj();
         void addModel(Model*);
         void Draw(DrawParameters);
+        void deleteShaders();
+        void loadShader(std::string);
+        void setRefractive(float);
+        float getRefractive();
+        void setRefra(bool);
+        bool getRefra();
+
 };
 
 

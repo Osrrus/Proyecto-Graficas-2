@@ -6,7 +6,9 @@ in vec3 FragPos;
 
 uniform vec3 viewPos;
 uniform samplerCube skybox;
-uniform float refra;
+uniform int refra;
+
+uniform float refractive;
 
 void main()
 {   
@@ -18,7 +20,7 @@ void main()
     }        
     else{
 
-        float ratio = 1.00 / 1.52;
+        float ratio = 1.00 / refractive;
         vec3 I = normalize(FragPos - viewPos);
         vec3 R = refract(I, normalize(vNormals),ratio);
         FragColor = vec4(texture(skybox, R).rgb, 1.0);

@@ -15,7 +15,8 @@ struct MaterialColor {
 		glm::vec3 sMaterial;
 		float nsMaterial;
 		float rMaterial;
-		int refra;
+		float refractive;
+		bool refra;
 };
 
 struct Texture
