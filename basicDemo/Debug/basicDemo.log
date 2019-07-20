@@ -1,0 +1,84 @@
+﻿  camera.cpp
+  CubeMap.cpp
+  LDir.cpp
+  Light.cpp
+  LPoint.cpp
+  LSpot.cpp
+  Model.cpp
+  Obj.cpp
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\class\Obj.cpp(10,22): warning C4018:  '<': no coinciden signed/unsigned
+  loader_cubemap.cpp
+  loader_obj.cpp
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\class\Obj.cpp(17,22): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(13,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(103,18): warning C4473:  "fscanf_s": no se pasaron suficientes argumentos para la cadena de formato
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(103,18): message :  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(103,18): message :  el argumento variádico 2 que falta es requerido por la cadena de formato '%s'
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(103,18): message :  este argumento se utiliza como un tamaño de búfer
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(108,19): warning C4473:  "fscanf_s": no se pasaron suficientes argumentos para la cadena de formato
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(108,19): message :  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(108,19): message :  el argumento variádico 2 que falta es requerido por la cadena de formato '%s'
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(108,19): message :  este argumento se utiliza como un tamaño de búfer
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(134,22): warning C4473:  "fscanf_s": no se pasaron suficientes argumentos para la cadena de formato
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(134,22): message :  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(134,22): message :  el argumento variádico 2 que falta es requerido por la cadena de formato '%s'
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(134,22): message :  este argumento se utiliza como un tamaño de búfer
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(166,20): warning C4473:  "fscanf_s": no se pasaron suficientes argumentos para la cadena de formato
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(166,20): message :  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(166,20): message :  el argumento variádico 2 que falta es requerido por la cadena de formato '%s'
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(166,20): message :  este argumento se utiliza como un tamaño de búfer
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(176,23): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(182,23): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(188,23): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(198,20): warning C4473:  "fscanf_s": no se pasaron suficientes argumentos para la cadena de formato
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(198,20): message :  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(198,20): message :  el argumento variádico 2 que falta es requerido por la cadena de formato '%s'
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(198,20): message :  este argumento se utiliza como un tamaño de búfer
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(234,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(240,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(246,20): warning C4018:  '<': no coinciden signed/unsigned
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(259,21): warning C4473:  "fscanf_s": no se pasaron suficientes argumentos para la cadena de formato
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(259,21): message :  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(259,21): message :  el argumento variádico 2 que falta es requerido por la cadena de formato '%s'
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(259,21): message :  este argumento se utiliza como un tamaño de búfer
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(285,18): warning C4473:  "fscanf_s": no se pasaron suficientes argumentos para la cadena de formato
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(285,18): message :  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(285,18): message :  el argumento variádico 2 que falta es requerido por la cadena de formato '%s'
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(285,18): message :  este argumento se utiliza como un tamaño de búfer
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(292,18): warning C4473:  "fscanf_s": no se pasaron suficientes argumentos para la cadena de formato
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(292,18): message :  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(292,18): message :  el argumento variádico 2 que falta es requerido por la cadena de formato '%s'
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(292,18): message :  este argumento se utiliza como un tamaño de búfer
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(307,18): warning C4473:  "fscanf_s": no se pasaron suficientes argumentos para la cadena de formato
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(307,18): message :  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(307,18): message :  el argumento variádico 2 que falta es requerido por la cadena de formato '%s'
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(307,18): message :  este argumento se utiliza como un tamaño de búfer
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(320,18): warning C4473:  "fscanf_s": no se pasaron suficientes argumentos para la cadena de formato
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(320,18): message :  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(320,18): message :  el argumento variádico 2 que falta es requerido por la cadena de formato '%s'
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(320,18): message :  este argumento se utiliza como un tamaño de búfer
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(333,18): warning C4473:  "fscanf_s": no se pasaron suficientes argumentos para la cadena de formato
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(333,18): message :  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(333,18): message :  el argumento variádico 2 que falta es requerido por la cadena de formato '%s'
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(333,18): message :  este argumento se utiliza como un tamaño de búfer
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(346,18): warning C4473:  "fscanf_s": no se pasaron suficientes argumentos para la cadena de formato
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(346,18): message :  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(346,18): message :  el argumento variádico 2 que falta es requerido por la cadena de formato '%s'
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(346,18): message :  este argumento se utiliza como un tamaño de búfer
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(347,18): warning C4473:  "fscanf_s": no se pasaron suficientes argumentos para la cadena de formato
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(347,18): message :  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(347,18): message :  el argumento variádico 2 que falta es requerido por la cadena de formato '%s'
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(347,18): message :  este argumento se utiliza como un tamaño de búfer
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(348,18): warning C4473:  "fscanf_s": no se pasaron suficientes argumentos para la cadena de formato
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(348,18): message :  los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 1
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(348,18): message :  el argumento variádico 2 que falta es requerido por la cadena de formato '%s'
+  main.cpp
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\components\loader_obj.cpp(348,18): message :  este argumento se utiliza como un tamaño de búfer
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\main.cpp(222,20): warning C4018:  '<': no coinciden signed/unsigned
+  Shader.cpp
+  stb_image.cpp
+  Generando código...
+C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\basicDemo\main.cpp(274,20): warning C4018:  '<': no coinciden signed/unsigned
+  glad.c
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+  basicDemo.vcxproj -> C:\Users\Alejandro\Desktop\Proyectos\Uni\Graficas 2\Fase II\Debug\basicDemo.exe
