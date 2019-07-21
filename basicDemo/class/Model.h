@@ -25,7 +25,7 @@ class Model
         bool visible;
 		Model(std::vector<glm::vec3> Vertices, std::vector<glm::vec2> TextCoord, std::vector<glm::vec3> normalCoord, std::vector<glm::vec3>,std::vector<glm::vec3>,char id[], std::string shaderUsed);
 		~Model();
-        void Draw();
+        void Draw(DrawParameters);
         void loadShader(std::string);
         void addTexture(Texture);
 };

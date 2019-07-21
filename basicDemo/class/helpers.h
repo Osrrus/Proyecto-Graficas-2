@@ -31,6 +31,8 @@ struct DrawParameters
 	glm::vec3 viewPos;
 	glm::mat4 projection;
 	unsigned int skyboxTexture;
+	unsigned int deepTexture;
 	DirLigth* dirLigth;
+	
 	
 };

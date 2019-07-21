@@ -29,7 +29,7 @@ void Obj::Draw(DrawParameters drawParameters){
 
 		drawParameters.dirLigth->setLight(models[i]->shader);
 
-        models[i]->Draw();
+        models[i]->Draw(drawParameters);
     }
 }
 

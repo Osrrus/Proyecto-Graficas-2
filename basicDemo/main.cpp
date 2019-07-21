@@ -31,7 +31,7 @@ CubeMap *cubeMap;
 std::vector<Obj*> objects;
 Obj* object;
 DrawParameters drawParameters;
-int mSelect = 0;
+int mSelect = -1;
 bool pressLeft, objMenuVis = false;
 std::string useShader;
 int pressMenu, menuLigth = 1;
@@ -222,9 +222,7 @@ bool init()
 	loadObjects("assets/obj/n/nanosuit.obj","");
 	loadObjects("assets/obj/crate/cubito.obj","reflect");
 	loadObjects("assets/obj/plane/plane.obj", "");
-	loadObjects("assets/obj/plane/plane2.obj", "");
-	//loadObjects("assets/obj/fallout/fallout.obj", "");
-
+	loadObjects("assets/obj/plane/plane2.obj", "Parallax");
 
 	glm::mat4 trans = glm::mat4(1.0f);
 	trans = glm::translate(trans, glm::vec3(-3.0f, -1.0f, 0.0f));
@@ -246,17 +244,16 @@ bool init()
 	trans = glm::scale(trans, glm::vec3(1.0f));
 	objects[3]->model = trans;
 
-	/*trans = glm::mat4(1.0f);
-	trans = glm::translate(trans, glm::vec3(0.0f,0.0f, -2.5f));
-	trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
-	trans = glm::scale(trans, glm::vec3(1.0f));
-	objects[4]->model = trans;*/
-
 	stbi_set_flip_vertically_on_load(false);
     cubeMap = new CubeMap(initCubeMapFaces());
 	drawParameters.skyboxTexture = cubeMap->textureId;
 
     initGui();
+
+	TwDefine(" Obj visible=false ");
+	TwDefine(" dirL visible=false ");
+
+	drawParameters.deepTexture = loadT("assets/obj/plane/bricks2_disp.jpg");
     return true;
 }
 /**

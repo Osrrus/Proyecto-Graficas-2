@@ -25,12 +25,12 @@ struct CookTorrenceReturn{
     vec3 specular;
 };
 
-
 uniform sampler2D texture_diffuse;
 uniform sampler2D texture_alpha;
 uniform sampler2D texture_specularH;
 uniform sampler2D texture_specular;
 uniform sampler2D texture_normals;
+uniform sampler2D texture_deepth;
 
 uniform vec3 modelMaterial_a;
 uniform vec3 modelMaterial_d;
@@ -42,6 +42,33 @@ uniform DirectionalLight dirLight;
 
 #define PI 3.14159265
 uniform vec3 viewPos;
+
+vec2 ParallaxMapping(vec2 texCoords, vec3 viewDir)
+{ 
+    const float minLayers = 8.0;
+    const float maxLayers = 32.0;
+    float numLayers =mix(maxLayers, minLayers, abs(dot(vec3(0.0,0.0,1.0), viewDir))); 
+
+    float layerDepth =1.0/ numLayers;
+    float currentLayerDepth =0.0;
+
+    vec2 P = viewDir.xy/ viewDir.z * 0.1;
+    vec2 deltaTexCoords = P / numLayers;
+    vec2  currentTexCoords = texCoords;
+
+    float currentDepthMapValue = texture(texture_deepth, currentTexCoords).r;   
+
+    while(currentLayerDepth < currentDepthMapValue){  
+        currentTexCoords -= deltaTexCoords;  
+
+        currentDepthMapValue =texture(texture_deepth, currentTexCoords).r;
+
+        currentLayerDepth += layerDepth;
+    }
+        
+    return currentTexCoords;
+
+} 
 
 CookTorrenceReturn CookTorrance(vec3 normal,vec3 lightDir,vec3 viewDir,vec3 lightColorD,vec3 lightColorS)
 {
@@ -79,9 +106,10 @@ CookTorrenceReturn CookTorrance(vec3 normal,vec3 lightDir,vec3 viewDir,vec3 ligh
 	}
     
     CookTorrenceReturn Re;
+    vec2 texCoords = ParallaxMapping(vTextCoord,  viewDir);
 
-    Re.diffuse =  lightColorD * NdotL * texture(texture_diffuse, vTextCoord).rgb;
-   	Re.specular = lightColorS * NdotL * (k + Rs * (1.0 - k))* texture(texture_specular, vTextCoord).rgb;
+    Re.diffuse =  lightColorD * NdotL * texture(texture_diffuse, texCoords).rgb;
+   	Re.specular = lightColorS * NdotL * (k + Rs * (1.0 - k))* texture(texture_specular, texCoords).rgb;
 
 
 	return Re;
@@ -100,8 +128,7 @@ vec3 CalcDirLight(DirectionalLight light, vec3 normal, vec3 viewDir)
 	CookTorrenceReturn Re;
 
 	vec3 ambient = light.ambient * texture(texture_diffuse, vTextCoord).rgb*0;
-	//Re.diffuse = light.diffuse * diff * texture(texture_diffuse, vTextCoord).rgb;
-	//Re.specular = light.specular * spec * texture(texture_specular, vTextCoord).rgb;
+
     Re = CookTorrance(normal,lightDir,viewDir,light.diffuse,light.specular);
     return ( ambient+ Re.diffuse + Re.specular);
 
@@ -131,8 +158,6 @@ void main()
 {   
     vec3 vNormals =  texture(texture_normals, vTextCoord).rgb;
 	vec3 norm = normalize(vNormals * 2.0 - 1.0);
-	//norm = normalize(TBN * norm); 
-	//vec3 viewDir = normalize(viewPos - FragPos);
     vec3 viewDir = normalize(TBNViewPos - TBNFragPos);
     
     vec3 lightResult = CalcDirLight(dirLight,norm,viewDir);

@@ -73,9 +73,16 @@ void Model::loadShader(std::string useShader)
 
 		shader = new Shader("assets/shaders/basic.vert", "assets/shaders/basic.frag");
 	}
+	else if(useShader == "Parallax"){
+
+		shader = new Shader("assets/shaders/basic.vert", "assets/shaders/parallax.frag");
+	}
+	else if (useShader == "OcclusionParallax") {
+
+		shader = new Shader("assets/shaders/basic.vert", "assets/shaders/occlusionParallax.frag");
+	}
 	else
 	{
-
 		shader = new Shader("assets/shaders/basic.vert", "assets/shaders/basic.frag");
 	}
 
@@ -83,11 +90,12 @@ void Model::loadShader(std::string useShader)
 	shader->use();
 }
 
-void Model::Draw()
+void Model::Draw(DrawParameters drawParameters)
 {
 
 	// Binds the vertex array to be drawn
-
+	unsigned int textureSetoff = textureIds.size();
+	
 	for (unsigned int i = 0; i < textureIds.size(); i++)
 	{
 		glActiveTexture(GL_TEXTURE0 + i);
@@ -96,6 +104,11 @@ void Model::Draw()
 
 		glBindTexture(GL_TEXTURE_2D, textureIds[i].id);
 	}
+
+	glActiveTexture(GL_TEXTURE0 + textureSetoff);
+	glUniform1i(glGetUniformLocation(shader->ID, "texture_deepth"), textureSetoff);
+
+	glBindTexture(GL_TEXTURE_2D, drawParameters.deepTexture);
 
 	shader->setVec3("modelMaterial_a", material.aMaterial);
 	shader->setVec3("modelMaterial_d", material.dMaterial);

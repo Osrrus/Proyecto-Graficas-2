@@ -28,10 +28,10 @@ void TwInterface::addMenu(unsigned int Width, unsigned int Height,std::string ty
 	TwInit(TW_OPENGL_CORE, NULL);
 	menus[typeMenu] = TwNewBar(typeMenu.c_str());
 	TwWindowSize(Width, Height);
-	TwDefine("dirL color='0 95 25' ");
-	TwDefine("dirL text=dark ");
-	TwDefine("dirL size='260 260' ");
-	TwDefine("dirL refresh=0.001 ");
+	TwDefine("Obj color='0 95 25' ");
+	TwDefine("Obj text=dark ");
+	TwDefine("Obj size='260 260' ");
+	TwDefine("Obj refresh=0.001 ");
 
 	if(typeMenu == "dirL"){
 
@@ -59,9 +59,9 @@ void TwInterface::buildDirMenu(std::string typeMenu){
 }
 
 void TwInterface::buildObjMenu(std::string typeMenu){
-
-	TwEnumVal DeployType[] = { { Cook_Torrence, "Cook Torrence" },{ Refract_Reflect, "Refract/Reflect" }};
-	TwType DeployTwType = TwDefineEnum("a", DeployType, 2);
+	
+	TwEnumVal DeployType[] = { { Cook_Torrence, "Cook Torrence" },{ Refract_Reflect, "Refract/Reflect" },{ Occlusion_Parallax, "OcclusionParallax" },{ Parallax, "Parallax" } };
+	TwType DeployTwType = TwDefineEnum("a", DeployType, 4);
 
 	TwAddVarRW(menus[typeMenu], "Modelo Actual", TW_TYPE_INT32, &modelCon, "min=0");
 	TwAddVarRW(menus[typeMenu], "Shader", DeployTwType, &m_shader, "");
@@ -75,6 +75,8 @@ void TwInterface::buildObjMenu(std::string typeMenu){
 std::string TwInterface::getDeployType() {
 	if (m_shader == Cook_Torrence) return "CT";
 	if (m_shader == Refract_Reflect) return "reflect";
+	if (m_shader == Occlusion_Parallax) return "OcclusionParallax";
+	if (m_shader == Parallax) return "Parallax";
 	return NULL;
 }
 
@@ -82,5 +84,7 @@ void TwInterface::setDeployType(std::string a) {
 
 	if (a =="CT")m_shader = Cook_Torrence;
 	if (a == "reflect")m_shader = Refract_Reflect;
+	if (a == "OcclusionParallax")m_shader = Occlusion_Parallax;
+	if (a == "Parallax")m_shader = Parallax;
 
 }
