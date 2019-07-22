@@ -223,6 +223,7 @@ bool init()
 	loadObjects("assets/obj/crate/cubito.obj","reflect");
 	loadObjects("assets/obj/plane/plane.obj", "");
 	loadObjects("assets/obj/plane/plane2.obj", "Parallax");
+	loadObjects("assets/obj/plane/plane3.obj", "Transparent");
 
 	glm::mat4 trans = glm::mat4(1.0f);
 	trans = glm::translate(trans, glm::vec3(-3.0f, -1.0f, 0.0f));
@@ -233,7 +234,7 @@ bool init()
 
 	trans = glm::mat4(1.0f);
 	trans = glm::translate(trans, glm::vec3(0.0f, 0.0f, 0.0f));
-	trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
+	trans = glm::rotate(trans, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
 	trans = glm::scale(trans, glm::vec3(10.0f));
 
 	objects[2]->model = trans;
@@ -243,6 +244,12 @@ bool init()
 	trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
 	trans = glm::scale(trans, glm::vec3(1.0f));
 	objects[3]->model = trans;
+
+	trans = glm::mat4(1.0f);
+	trans = glm::translate(trans, glm::vec3(0.0f, 1.0f, 5.0f));
+	trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+	trans = glm::scale(trans, glm::vec3(1.0f));
+	objects[4]->model = trans;
 
 	stbi_set_flip_vertically_on_load(false);
     cubeMap = new CubeMap(initCubeMapFaces());
@@ -341,6 +348,17 @@ void render()
     // Clears the color and depth buffers from the frame buffer
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_FRAMEBUFFER_SRGB);
+
+	
+
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	glDepthFunc(GL_LEQUAL);
+		drawParameters.view = glm::mat4(glm::mat3(camera->getWorlToViewMatrix()));
+		cubeMap->Draw(drawParameters);
+	glDepthFunc(GL_LESS);
+
 	drawParameters.view = camera->getWorlToViewMatrix();
 	drawParameters.viewPos = camera->position;
 	drawParameters.projection = glm::perspective(glm::radians(90.0f), (float)windowWidth / (float)windowHeight, 0.1f, 1000.0f);
@@ -349,11 +367,6 @@ void render()
 		objects[i]->Draw(drawParameters);
 	}
 	
-	glDepthFunc(GL_LEQUAL);
-	drawParameters.view = glm::mat4(glm::mat3(camera->getWorlToViewMatrix()));
-	cubeMap->Draw(drawParameters);
-	glDepthFunc(GL_LESS);
-
     TwDraw();
 	updateGui();
 

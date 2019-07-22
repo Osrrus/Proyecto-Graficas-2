@@ -60,8 +60,8 @@ void TwInterface::buildDirMenu(std::string typeMenu){
 
 void TwInterface::buildObjMenu(std::string typeMenu){
 	
-	TwEnumVal DeployType[] = { { Cook_Torrence, "Cook Torrence" },{ Refract_Reflect, "Refract/Reflect" },{ Occlusion_Parallax, "OcclusionParallax" },{ Parallax, "Parallax" } };
-	TwType DeployTwType = TwDefineEnum("a", DeployType, 4);
+	TwEnumVal DeployType[] = { { Cook_Torrence, "Cook Torrence" },{ Refract_Reflect, "Refract/Reflect" },{ Occlusion_Parallax, "OcclusionParallax" },{ Parallax, "Parallax" },{Transparent,"Transparent"} };
+	TwType DeployTwType = TwDefineEnum("a", DeployType, 5);
 
 	TwAddVarRW(menus[typeMenu], "Modelo Actual", TW_TYPE_INT32, &modelCon, "min=0");
 	TwAddVarRW(menus[typeMenu], "Shader", DeployTwType, &m_shader, "");
@@ -77,6 +77,7 @@ std::string TwInterface::getDeployType() {
 	if (m_shader == Refract_Reflect) return "reflect";
 	if (m_shader == Occlusion_Parallax) return "OcclusionParallax";
 	if (m_shader == Parallax) return "Parallax";
+	if (m_shader == Transparent) return "Transparent";
 	return NULL;
 }
 
@@ -86,5 +87,6 @@ void TwInterface::setDeployType(std::string a) {
 	if (a == "reflect")m_shader = Refract_Reflect;
 	if (a == "OcclusionParallax")m_shader = Occlusion_Parallax;
 	if (a == "Parallax")m_shader = Parallax;
+	if (a == "Transparent")m_shader = Transparent;
 
 }

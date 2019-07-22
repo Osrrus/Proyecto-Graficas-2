@@ -6,7 +6,7 @@
 #include <AntTweakBar.h>
 #include <glm/glm.hpp>
 
-typedef enum { Cook_Torrence, Bling_Phong, Refract_Reflect, Occlusion_Parallax, Parallax} SHADER_TYPE;
+typedef enum { Cook_Torrence, Bling_Phong, Refract_Reflect, Occlusion_Parallax, Parallax, Transparent} SHADER_TYPE;
 
 
 class TwInterface {

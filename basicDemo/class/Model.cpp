@@ -81,6 +81,11 @@ void Model::loadShader(std::string useShader)
 
 		shader = new Shader("assets/shaders/basic.vert", "assets/shaders/occlusionParallax.frag");
 	}
+	else if(useShader == "Transparent"){
+
+		shader = new Shader("assets/shaders/basic.vert", "assets/shaders/transparent.frag");
+
+	}
 	else
 	{
 		shader = new Shader("assets/shaders/basic.vert", "assets/shaders/basic.frag");
